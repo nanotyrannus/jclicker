@@ -2,6 +2,8 @@ package main;
 
 public interface Question {
 
-	void submitAnswer(int a);
-	void pollAnswers();
+	public void submitAnswer(int s, int a);
+	public void pollAnswers();
+	public char[] getChoices();
+	public char getAnswer();
 }

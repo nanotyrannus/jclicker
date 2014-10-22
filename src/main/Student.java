@@ -1,20 +1,17 @@
 package main;
-
 import java.util.Random;
 
 public class Student {
-
-	private String iden = "";
-	
+	private Integer iden;
+	private Random rand = new Random();
 	public Student(){
-		Random rand = new Random();
-		for(int i = 0; i < 20; ++i){
-			iden += rand.nextInt(10) + 1 + "";
-		}
+		iden = rand.nextInt();
 	}
-	
-	public String getID(){
+	public Integer getID(){
 		return iden;
 	}
 	
+	public void recieveQuestion(Question q) {
+		q.submitAnswer(iden, rand.nextInt(q.getChoices().length));
+	}
 }
